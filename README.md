@@ -15,3 +15,9 @@
 
 ```bash
 pip install -r requirements.txt
+
+3. Copy .env.example to .env and add your own values
+
+4. Run the bot:
+
+python main.py
