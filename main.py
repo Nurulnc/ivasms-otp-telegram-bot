@@ -1,4 +1,3 @@
-
 import os
 import time
 import requests
@@ -8,10 +7,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-EMAIL = os.getenv("nurulnc100@gmail.com")
-PASSWORD = os.getenv("Nurulnc199915")
-TELEGRAM_TOKEN = os.getenv("8097351270:AAFp5k1uuEPqwxS1XxTCDz7I_r1Xk2R3ssY")
-CHAT_ID = os.getenv("4970547829")
+EMAIL = os.getenv("IVASMS_EMAIL")
+PASSWORD = os.getenv("IVASMS_PASSWORD")
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 bot = Bot(token=TELEGRAM_TOKEN)
 session = requests.Session()
