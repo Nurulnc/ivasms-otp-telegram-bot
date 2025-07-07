@@ -7,10 +7,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-EMAIL = os.getenv("IVASMS_EMAIL")
-PASSWORD = os.getenv("IVASMS_PASSWORD")
+EMAIL = os.getenv("EMAIL")
+PASSWORD = os.getenv("PASSWORD")
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
-CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+CHAT_ID = os.getenv("CHAT_ID")
 
 bot = Bot(token=TELEGRAM_TOKEN)
 session = requests.Session()
@@ -44,8 +44,9 @@ def main():
             for msg in get_latest_sms():
                 if msg and msg not in seen:
                     bot.send_message(chat_id=CHAT_ID, text=f"🔐 OTP: {msg}")
+                    print("✅ Sent OTP:", msg)
                     seen.add(msg)
-            time.sleep(10)
+            time.sleep(15)
         except Exception as e:
             print("⚠️ Error:", e)
             time.sleep(30)
